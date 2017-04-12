@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>李敏的个人主页</title>
+	<style type="text/css">
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td { margin:0; padding:0; }
+body { font-size:12px; color:#fff; font-family:"微软雅黑"; background:#f4f6fa; line-height:24px; /*overflow-y: hidden;*/}
+html {margin: 0px;padding: 0px; }
+fieldset, img { border:0; }
+ol, ul { list-style:none; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+em { font-style:normal; }
+input, button, select, textarea { outline:none;  } 
+input{ border:0;}
+textarea { resize:none; }
+p{ text-align:justify; text-justify:distribute;}
+a { color: #fff; text-decoration:none; }
+a:hover { color:#0485FF; text-decoration:none; }
+img{ display:block;} 
+		.out-bg{ width:100%; height:100%; position:fixed;}
+		.out-bg img{ width:100%; height:auto; position:absolute; top:0; left:0;}
+		.out{ width:100%; height:100%; background:rgba(0,0,0,0.3); position:absolute; top:0; left:0; font-size:16px;}
+		.in{height:200px; width:200px; position:relative; top:50%; left:50%;margin-left:-100px; margin-top:-100px; z-index:2;}
+		.icon,.icon2{height:200px; width:200px; background:url(style/images/img/o.png) no-repeat;-o-transition: all .5s ease;-moz-transition: all .5s ease;-ms-transition: all .5s ease; -webkit-transition: all .5s ease; transition: all .5s ease; position:absolute; top:0; left:0;}
+		.icon2{ background-image:url(style/images/img/zp-1.png);  opacity:0;}
+		.in:hover .icon{-o-transform: rotate(360deg);-moz-transform: rotate(360deg);-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg); opacity: 0;}
+		.in:hover .icon2{-o-transform: rotate(-360deg);-moz-transform: rotate(-360deg);-ms-transform: rotate(-360deg); -webkit-transform: rotate(-360deg); transform: rotate(-360deg); opacity: 1;}
+		.enter{ width:200px; height:40px; border:2px solid rgba(255,255,255,0.2); position:absolute; top:70%; left:50%; margin-left:-100px; color:#fff; line-height:40px; text-align:center;-o-transition: all .5s ease;-moz-transition: all .5s ease;-ms-transition: all .5s ease; -webkit-transition: all .5s ease; transition: all .5s ease;}
+		.enter .line{ display:block; position:absolute; background: none;-o-transition: all .3s ease;-moz-transition: all .3s ease;-ms-transition: all .3s ease; -webkit-transition: all .3s ease; transition: all .3s ease;}
+		.enter:hover{ border-color:rgba(255,255,255,0.8);}
+		.enter:hover .line{ background:rgba(255,255,255,0.8);}
+		.enter .line-top{ height:2px; width:0; top:-2px; left:-110%; }
+		.enter:hover .line-top{ width:100%; left:-2px;}
+		.enter .line-right{ height:0px; width:2px; top:-110%; right:-2px; }
+		.enter:hover .line-right{ height:100%; top:-2px;}
+		.enter .line-bottom{ height:0px; width:2px; bottom:-110%; left:-2px; }
+		.enter:hover .line-bottom{ height:100%; bottom:-2px;}
+		.enter .line-left{ height:2px; width:0px; bottom:-2px; right:-110%; }
+		.enter:hover .line-left{ width:100%; right:-2px;}
+		.tip{ position:absolute; padding:0 20px; height:50px; background:rgba(0,0,0,0.6); font-size:18px; margin: 0 auto; border-radius:4px; bottom:8%; left:50%; margin-left:-92px; opacity:0;}
+		.tip em{ font-style:normal; color:#fff; line-height:50px;}
+		.tip span{ display:block; width:0; height:0; overflow:hidden; border:7px solid transparent; border-bottom-color:rgba(0,0,0,0.6); position:absolute; top:-14px; left:50%; margin-left:-7px;}
+
+	</style>
+	<script type="text/javascript" src="style/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$('.enter').hover(function() {
+			var title = $(this).attr('date');
+			$('.tip em').text(title);
+			$('.tip').stop().animate({'bottom': '12%', 'opacity': '1'}, 300);
+		}, function() {
+			$('.tip').stop().animate({'bottom': '8%', 'opacity': '0'}, 300);
+		});
+	})
+	</script>
+</head>
+<body>
+	<div class="out-bg">
+		<img src="style/images/youling.jpg" height="900" width="1600" alt="">
+		<div class="out">
+			<div class="in">
+				<a href="javascript:;" class="icon"></a>
+				<a href="javascript:;" class="icon2"></a>
+			</div>
+			<a href="list.html" class="enter" date="欢迎进入我的网站">
+				<span class="line line-top"></span>
+				<span class="line line-right"></span>
+				<span class="line line-bottom"></span>
+				<span class="line line-left"></span>
+				点击进入
+			</a>
+			<div class="tip"><em></em><span></span></div>
+		</div>
+	</div>
+</body>
+</html>
